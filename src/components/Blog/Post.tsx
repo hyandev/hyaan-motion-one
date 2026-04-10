@@ -4,11 +4,11 @@ import { ArrowLeft } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Badge } from "../common/Title";
 import parseText from "../../lib/parseText";
-import { ButtonContainer, ButtonText } from "../common/MainButton";
 import { motion } from "motion/react";
-import { PostErrorVariants, PostVariants } from "../common/Variants";
+import { PostVariants } from "../common/Variants";
 import ScrollToTop from "../../lib/ScrollToTop";
 import React from "react";
+import Error from "../common/Error";
 
 const Post = () => {
   const { pathname } = useLocation();
@@ -137,26 +137,7 @@ const Post = () => {
           )}
         </motion.article>
       ) : (
-        <motion.div
-          variants={PostErrorVariants}
-          initial="initial"
-          animate="animate"
-          className="flex h-screen flex-col items-center justify-center gap-3.5"
-        >
-          <p className="text-center text-5xl leading-15 font-semibold text-white">
-            404 <br /> Post not found
-          </p>{" "}
-          <ButtonContainer
-            as="link"
-            to={"/blog"}
-            className={cn(
-              "bg-primary rounded-md text-white",
-              "cursor-pointer max-md:justify-center",
-            )}
-          >
-            <ButtonText>Go Back</ButtonText>
-          </ButtonContainer>
-        </motion.div>
+        <Error message="Post not found" to="/blog" />
       )}
     </>
   );

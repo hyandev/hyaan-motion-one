@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import Blog from "./components/Blog/Blog";
 import Post from "./components/Blog/Post";
 import Contact from "./components/Contact/Contact";
+import Error from "./components/common/Error";
 
 const App = () => {
   const lenisRef = useRef<LenisRef>(null);
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:postSlug" element={<Post />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error message="Page not found" />} />
         </Routes>
       </ReactLenis>
     </div>
