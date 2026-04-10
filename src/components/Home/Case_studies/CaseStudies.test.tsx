@@ -10,11 +10,10 @@ const mockScrollPrev = vi.fn();
 vi.mock("embla-carousel-react", () => ({
   __esModule: true,
   default: () => [
-    (node: EmblaViewportRefType) => {}, // emblaRef
+    (_node: EmblaViewportRefType) => {}, // emblaRef
     {
       scrollNext: mockScrollNext,
       scrollPrev: mockScrollPrev,
-      // إضافة الدوال الإضافية التي قد يحتاجها المكون لتجنب الأخطاء
       canScrollNext: () => true,
       canScrollPrev: () => true,
     },

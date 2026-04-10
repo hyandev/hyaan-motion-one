@@ -29,9 +29,9 @@ describe("Pricing Plans Display", () => {
   // ─── Annual pricing toggle ON ──────────────────────────────────────────────
 
   describe("when the annual billing toggle is ON", () => {
-    pricingPlans.forEach((plan) => {
+    pricingPlans.forEach((plan, i) => {
       it(`renders the ${plan.name} plan with annual pricing`, () => {
-        render(<PlanCard plan={plan} isOn={true} />);
+        render(<PlanCard plan={plan} isOn={true} index={i} />);
         assertCommonElements(plan);
 
         if (!plan.isCustom && plan.annually_price && plan.monthly_price) {

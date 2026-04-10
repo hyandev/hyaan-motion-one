@@ -10,6 +10,7 @@ describe("Canvas", () => {
         width={407.27}
         height={407.27}
         particles={200}
+        containerHeight={600}
       />,
     );
   });
